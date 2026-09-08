@@ -29,7 +29,7 @@ O que sobrevive é mecanismo, não alfa: o score separa perdedores melhor do que
 
 Ranquear ações por momento e volatilidade dentro do próprio subsetor, e comprar as melhores de cada um.
 
-- **Universo** — B3, COTAHIST de 1995 a 2026. Lote padrão à vista (`CODBDI` = 02, `TPMERC` = 10), classes ON/PN/UNT. Elegibilidade exige 36 meses de histórico observado, negociação no mês de decisão e no anterior, e pelo menos 4 sessões em cada.
+- **Universo** — B3, COTAHIST de 1995 a 2026. Essa é a base; a janela de teste é 2018-01 a 2026-07, e a série de backtest começa em 2001-12, depois de satisfeitas as exigências de histórico e de janela de features. Lote padrão à vista (`CODBDI` = 02, `TPMERC` = 10), classes ON/PN/UNT. Elegibilidade exige 36 meses de histórico observado, negociação no mês de decisão e no anterior, e pelo menos 4 sessões em cada.
 - **Features** — seis, fixas: momento de 1, 3, 6 e 12 meses e volatilidade de 3 e 6 meses. Cada janela só existe se os K meses forem consecutivos *e* o ativo for elegível em todos eles. Transformadas em rank percentil cross-seccional dentro de cada mês.
 - **Alvo** — retorno do mês seguinte menos o retorno do índice interno do mesmo universo. O modelo ordena ativos relativamente; não prevê o mercado.
 - **Arquitetura** — um OLS por subsetor (45 chaves setor+subsetor) quando há pelo menos 5 ativos elegíveis e 150 observações na janela; caso contrário o ativo cai para um modelo generalista treinado sobre tudo. Sem regularização e **sem seleção de fatores** — a seleção "por estabilidade" testada antes era indistinguível de sortear 3 de 7.
