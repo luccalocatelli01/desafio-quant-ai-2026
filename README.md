@@ -38,6 +38,8 @@ Ranquear ações por momento e volatilidade dentro do próprio subsetor, e compr
 
 Os parâmetros foram congelados em [`decisoes/MODEL_SPEC_2026-08-15.md`](decisoes/MODEL_SPEC_2026-08-15.md) **depois** de medir o IC fora da amostra e **antes** de existir qualquer backtest de carteira. As 26 decisões estruturais, cada uma datada e com o mecanismo que a justifica, estão em [`decisoes/DECISOES_D01_D26.md`](decisoes/DECISOES_D01_D26.md).
 
+**Sobre o histórico deste repositório.** O projeto foi desenvolvido fora de controle de versão, em agosto de 2026, e publicado aqui em commit único em 08/09/2026. O histórico do git não corrobora a cronologia descrita acima — o registro cronológico são os arquivos datados em `decisoes/` e o carimbo de data e hora no cabeçalho do MODEL_SPEC. Esses arquivos foram escritos por mim e datados por mim; não são prova no sentido forte. O que é verificável de fato é outra coisa: o MODEL_SPEC registra o hash SHA-256 do arquivo de previsões, e quem rodar o pipeline pode conferir se o modelo que este repositório descreve é o mesmo que gerou os resultados reportados.
+
 ## Como rodar
 
 Requisitos: Python 3.11+.
