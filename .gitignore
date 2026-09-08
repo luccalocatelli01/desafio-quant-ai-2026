@@ -1,0 +1,27 @@
+# Dados — 640 MB, todos de fonte pública, baixados pelo próprio código
+dados/
+intermediario/
+
+# Ambiente
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Notas de trabalho, não fazem parte da entrega
+DOSSIE.md
+ESTADO.md
+conselho/
+analise_council/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini

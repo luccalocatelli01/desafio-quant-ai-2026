@@ -1,0 +1,32 @@
+﻿# TABELA FINAL CONSOLIDADA — TESTE: decisao 2018-01 a 2026-07, retornos 2018-02 a 2026-08 (103 meses)
+# custo: 50 bps por perna, cobrado sobre DUAS pernas (soma |dw|); giro_ow_%mes publicado em UMA perna (plano item 7)
+# EW point-in-time: comparador de manchete, SEMPRE custo zero (convencao declarada); EW elegivel = a MESMA serie liquida de 50 bps
+# t_NW3_exc_vs_EW_PIT: excedente (serie liq50, PIT bruto) — construcao MISTA da manchete, declarada (plano item 4);
+#   base contra base, V4: bruto x bruto +0,1357 t +0,879 | liq50 x liq50 +0,0636 t +0,416; V5: +0,1328 t +0,859 | +0,0606 t +0,395
+# Sharpe: [NAO ORDENAVEL] (plano item 6; Israelsen 2005) — com excesso negativo contra o CDI, mu/sigma cresce com sigma
+# ordem das linhas: arquitetural (V1..V5, depois comparadores) — NADA ordenado por Sharpe (S6)
+# permutacao em tres niveis (D41, 2.000 replicas, semente 20260815): p 0,0425 (decil inferior de V5) ->
+#   0,3985 (10 decis) -> 0,7350 (10 decis x 5 construcoes) — nao e possivel descartar sorte
+# MANCHETE DE CUSTO = A CURVA INTEIRA, 0 a 100 bps (D44, rodada 4) — sem nivel unico. Nenhuma conclusao muda
+#   no intervalo: A perde do CDI no ACUMULADO GEOMETRICO ja no bruto (V5 8,9732 vs 9,0315 %aa); em media
+#   aritmetica MENSAL o excedente e indistinguivel de zero (bruto +0.1485%/mes t NW3 +0.258; liq50 +0.0127 t +0.022)
+#   — a diferenca entre as duas leituras e o arrasto de variancia (vol 19%aa vs 1,19% do CDI, ~1,8 pp/ano).
+#   V5 x EW PIT inverte em ~64,5 bps (acima do caso base) [rodada 4 par.6].
+#   Os 50 bps sao o caso CONSERVADOR, declarado ex-ante; custo efetivo tipico de acoes liquidas na B3: 3-15 bps.
+#   Trocar a manchete de 50 para 10 bps foi considerado e REJEITADO (compraria +1,40 pp e zero conclusao; par.4.6).
+# CRITERIO DO 1/N (D45, transplante de MEDICAO vindo do Projeto B, declarado): a construcao de carteira bate o
+#   1/N sobre os MESMOS nomes em +0,1019%/mes BRUTO, t +0,935, positivo em 4 de 4 construcoes — teste aplicado a A
+#   PELO CONSELHO da rodada 4, DEPOIS de o resultado existir, e A passou. OBRIGATORIO ler junto: o efeito isolado
+#   da ponderacao 1/vol e +0,0436%/mes com t +0,403 — indistinguivel de zero. Uma coisa nao vai sem a outra.
+serie,bruto_%aa,liq10_%aa,liq25_%aa,liq50_%aa,liq75_%aa,liq100_%aa,vol_%aa,DDmax_%,meses+_%,giro_ow_%mes,n_nomes_med,t_NW3_exc_vs_EW_PIT,Sharpe [NAO ORDENAVEL]
+V1 (C2-A),5.4772,4.0115,1.8477,-1.6673,-5.0711,-8.3669,22.7633,-40.4003,44.6602,58.3011,35.0,-2.4848,-0.333
+V2 (V2-A),6.2359,5.1393,3.5138,0.8555,-1.7404,-4.2753,20.3317,-38.2379,52.4272,43.1981,41.0,-2.0149,-0.2745
+V3,6.7526,6.5239,6.1816,5.6133,5.0478,4.4851,20.9567,-35.0811,52.4272,8.9677,226.0,-1.1593,-0.0439
+V4-EW,7.2842,7.0795,6.7732,6.2645,5.7579,5.2536,20.8366,-34.9184,51.4563,7.993,226.0,-0.5379,-0.016
+V4 (1/vol),9.0109,8.659,8.1331,7.2618,6.3968,5.5382,19.0026,-31.0138,51.4563,13.5822,226.0,-0.0006,0.0098
+V5 (1/vol),8.9732,8.6212,8.0952,7.2237,6.3585,5.4997,19.0008,-31.0138,52.4272,13.5891,226.0,-0.0201,0.0079
+"EW point-in-time (comparador de manchete, custo zero)",6.7162,,,,,,21.446,-33.7861,51.4563,6.3701,295.0,,0.0088
+"EW elegivel (mesma serie, liq50)",6.7162,,,5.9073,,,21.4399,-33.9006,51.4563,6.3701,295.0,-45.0706,-0.0266
+EW da base,5.3589,,,4.7413,,,22.1235,-35.9088,51.4563,4.9233,252.0,-2.6828,-0.0679
+CDI,9.0315,,,9.0315,,,1.1941,0.0,100.0,,,-0.025,
+indice interno [NAO INVESTIVEL],7.1873,,,7.1873,,,21.7464,-34.5699,53.3981,,295.0,1.7551,0.0324
